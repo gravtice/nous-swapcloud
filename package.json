@@ -1,0 +1,56 @@
+{
+  "name": "@gravtice/nous-swapcloud",
+  "version": "0.1.4",
+  "type": "module",
+  "description": "CLI + stdio MCP server + agent skill for uploading files to swap cloud storage (Tencent COS first).",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gravtice/nous-swapcloud.git"
+  },
+  "homepage": "https://github.com/Gravtice/nous-swapcloud#readme",
+  "bugs": {
+    "url": "https://github.com/Gravtice/nous-swapcloud/issues"
+  },
+  "keywords": [
+    "mcp",
+    "tencent-cos",
+    "file-upload",
+    "signed-url",
+    "claude-code",
+    "agent-skill"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bin": {
+    "nous-swapcloud": "bin/nous-swapcloud.js"
+  },
+  "files": [
+    "LICENSE",
+    "bin/",
+    "src/",
+    "skills/",
+    ".env.example",
+    "README.md"
+  ],
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "cos-nodejs-sdk-v5": "^2.15.0",
+    "dotenv": "^16.4.5"
+  },
+  "overrides": {
+    "request": {
+      "form-data": "2.5.5",
+      "qs": "6.14.1",
+      "tough-cookie": "4.1.3"
+    }
+  }
+}
