@@ -33,7 +33,6 @@
     "LICENSE",
     "bin/",
     "src/",
-    "skills/",
     ".env.example",
     "README.md"
   ],

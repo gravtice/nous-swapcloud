@@ -12,7 +12,7 @@ Upload files, get signed URLs. For multimodal AI, file sharing, or large API pay
 
 - **MCP Server**：stdio MCP server，支持 Claude Code / Cursor / Gemini CLI 等
 - **CLI**：`upload` 命令直接上传，不依赖 MCP 客户端
-- **Agent Skill**：内置 skill 文件，可集成到 AI agent 工作流
+- **Agent Skill**：通过 `nous-skills` 仓库安装，集成到 AI agent 工作流
 - **点击安全**：自动编码签名 URL 中的 `;`，避免链接被截断
 - **零配置参数**：自动加载 `.env.local` 等配置文件
 - **对象 TTL**：可选，配合 COS 生命周期自动清理
@@ -55,10 +55,10 @@ npx -y @gravtice/nous-swapcloud upload --file ./example.txt --expires 3600
 npx -y @gravtice/nous-swapcloud
 ```
 
-**Agent Skill：**
+**Agent Skill（安装到 Codex CLI）：**
 
 ```bash
-npx add-skill gravtice/nous-swapcloud
+npx skills add gravtice/nous-skills -s nous-swapcloud
 ```
 
 > 镜像源问题？添加 `--registry=https://registry.npmjs.org/`
@@ -174,20 +174,16 @@ TENCENT_COS_SECRET_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
 ## Agent Skill
 
-仓库内置 `skills/nous-swapcloud-skill/SKILL.md`，可直接集成到 AI agent。
+该 Skill 已迁移到独立仓库：
+
+- 安装命令：`npx skills add gravtice/nous-skills -s nous-swapcloud`
+- 源代码：<https://github.com/gravtice/nous-skills/tree/main/skills/nous-swapcloud>
 
 **Claude Code 示例：**
 
 ```
-请先阅读 @skills/nous-swapcloud-skill/SKILL.md
+请先阅读 https://github.com/gravtice/nous-skills/tree/main/skills/nous-swapcloud
 然后把 ./data.json 上传，expires=600，只返回 URL
-```
-
-**Codex CLI 安装：**
-
-```bash
-mkdir -p ~/.codex/skills
-ln -s "$(pwd)/skills/nous-swapcloud-skill" ~/.codex/skills/nous-swapcloud-skill
 ```
 
 ## TTL 说明
