@@ -214,4 +214,4 @@ npx -y --registry=https://registry.npmjs.org/ @gravtice/nous-swapcloud
 
 ## License
 
-[Apache-2.0](LICENSE)
+[MIT](LICENSE)

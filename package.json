@@ -3,7 +3,7 @@
   "version": "0.1.4",
   "type": "module",
   "description": "CLI + stdio MCP server + agent skill for uploading files to swap cloud storage (Tencent COS first).",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Gravtice/nous-swapcloud.git"
